@@ -4,12 +4,9 @@ import html2pdf from 'html2pdf.js';
 const FriendshipAgreement = () => {
 	const [formData, setFormData] = useState({
 		date: '',
-		quota: '',
+		quota: 'once per month',
 		startDate: '',
 		location: '',
-		excludedLocation: '',
-		state: '',
-		guestProposalTime: '',
 		fuckUpActivityDays: '7',
 		rescheduleAlternativeDays: '14',
 		rescheduleAgreementHours: '48',
@@ -17,6 +14,7 @@ const FriendshipAgreement = () => {
 		probationaryPeriodMonths: '3',
 		probationaryActivitiesPerMonth: '2',
 		schedulingMinHours: '3',
+		amountoftime: 'hours',
 		schedulingMaxDays: '10',
 		spontaneousActivityNoticeHours: '1',
 		cancellationNoticeFraction: '1/3',
@@ -24,7 +22,12 @@ const FriendshipAgreement = () => {
 		creditCardRouletteMonth: 'March',
 		rsvpHours: '24',
 		bitchBillPercentage: '200',
-		excludedAlcohol: ['gin', 'beer', 'wine'],
+		excludedAlcohol: 'gin', 'beer', 'wine',
+		negotiationPeriod: '7',
+		mediationPeriod: '30',
+		appealPeriod: '7',
+		appealArbiter: 'tbh whoever you want',
+		
 	});
 
 	const contentRef = useRef(null);
@@ -130,7 +133,7 @@ const FriendshipAgreement = () => {
 				<button onClick={addFriend} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">Add Friend</button>
 			</div>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">RECITALS</h2>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break text-center">RECITALS</h2>
 
 			<p>WHEREAS, the Parties wish to partake in various social activities, including but not limited to dining out,
 				to foster and maintain their friendship;</p>
@@ -144,8 +147,8 @@ const FriendshipAgreement = () => {
 			<p>NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, the Parties agree
 				as follows:</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE I</h2>
-			<h3 className="text-xl font-bold mb-4 avoid-break"><u>ACTIVITIES AND COMMITMENTS</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break text-center">ARTICLE I</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break text-center"><u>ACTIVITIES AND COMMITMENTS</u></h3>
 
 			<p className="mb-4 avoid-break">
 				<strong>Section 1.01. <u>Activities</u>.</strong> The Parties shall engage in social activities for the
@@ -179,7 +182,7 @@ const FriendshipAgreement = () => {
 				name="location"
 				value={formData.location}
 				onChange={handleInputChange}
-				placeholder="e.g., New York City, but excluding Brooklyn and locations above 34th Street in Manhattan"
+				placeholder="e.g., New York City"
 				className="border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> (each, a "<u>Location</u>"), subject to the terms and condition of Section 2.01 herein. For the avoidance of doubt,
 				if the Parties agree to meet at a venue that does not qualify as a Location in accordance with this Section 1.03,
@@ -202,7 +205,7 @@ const FriendshipAgreement = () => {
 				name="fuckUpActivityDays"
 				value={formData.fuckUpActivityDays}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days of the end of the month for which the Quota was not met. (a "<u>Fuck-Up Activities</u>"). Fuck-Up
 				Activities shall be subject to the same terms and conditions under this Agreement as if they were an Activity.
 				Fuck-Up Activities shall not count towards any Quotas.
@@ -211,20 +214,20 @@ const FriendshipAgreement = () => {
 			<p className="mb-4 avoid-break">
 				<strong>Section 1.06. <u>Rescheduling Activities</u>.</strong> In the event an Activity needs to be
 				rescheduled, the Parties shall follow the same process outlined in Section 2.01 for scheduling. The Party
-				requesting the reschedule shall propose at least three (3) alternative dates and times within the next
+				requesting the reschedule shall propose at least three (3) alternative dates and times within the next 
 				<input
 				type="number"
 				name="rescheduleAlternativeDays"
 				value={formData.rescheduleAlternativeDays}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
-			/> days. The Parties shall then use good faith efforts to agree on a new date and time for the Activity within
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+			/> days. The Parties shall then use good faith efforts to agree on a new date and time for the Activity within 
 				<input
 				type="number"
 				name="rescheduleAgreementHours"
 				value={formData.rescheduleAgreementHours}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> hours of the rescheduling request. If no agreement is reached, the Activity shall be considered cancelled
 				and subject to the provisions of Section 1.05.
 			</p>
@@ -236,7 +239,7 @@ const FriendshipAgreement = () => {
 				name="withdrawalNoticeDays"
 				value={formData.withdrawalNoticeDays}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days prior to the intended withdrawal date. The withdrawing Party shall be responsible for participating in
 				all scheduled Activities up to the withdrawal date and shall settle any outstanding financial obligations
 				related to past Activities. Upon withdrawal, the Party shall cease to be bound by the terms of this Agreement
@@ -251,20 +254,20 @@ const FriendshipAgreement = () => {
 				name="probationaryPeriodMonths"
 				value={formData.probationaryPeriodMonths}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> month probationary period. During this period, the new member shall attend at least <input
 				type="number"
 				name="probationaryActivitiesPerMonth"
 				value={formData.probationaryActivitiesPerMonth}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> Activities per month. At the end of the probationary period, existing Parties shall vote on the new member's
 				full integration. A unanimous vote is required for the new member to be fully admitted to the group. Upon full
 				admission, the new member shall become a Party to this Agreement by signing an addendum.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE II</h2>
-			<h3 className="text-xl font-bold mb-4 avoid-break"><u>TIMING AND NOTICE</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break text-center">ARTICLE II</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break text-center"><u>TIMING AND NOTICE</u></h3>
 
 			<p className="mb-4 avoid-break">
 				<strong>Section 2.01. <u>Scheduling</u>.</strong> Activities, including time and Location, shall be proposed
@@ -274,27 +277,25 @@ const FriendshipAgreement = () => {
 				name="schedulingMinHours"
 				value={formData.schedulingMinHours}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> <input
 				type="text"
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				placeholder="hours, days"
-				className="border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of an Activity and no more than <input
 				type="number"
 				name="schedulingMaxDays"
 				value={formData.schedulingMaxDays}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> <input
 				type="text"
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				placeholder="hours, days, weeks"
-				className="border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of an Activity. No Party will propose an Activity that they know or
 				reasonably should know another Party cannot attend (including, without limitation, by reason of forgetting
 				that a Party told another Party about a preplanned activity and the forgetting party never saved it in your
@@ -312,14 +313,13 @@ const FriendshipAgreement = () => {
 				name="spontaneousActivityNoticeHours"
 				value={formData.spontaneousActivityNoticeHours}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> <input
 				type="text"
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				placeholder="hours, days, weeks"
-				className="border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of the Activity. Participation in spontaneous Activities is voluntary and
 				shall not count towards the monthly Quota unless unanimously agreed by the Parties but may count towards the
 				good faith effort for additional Activities as described in Section 1.02.
@@ -334,8 +334,7 @@ const FriendshipAgreement = () => {
 				name="cancellationNoticeFraction"
 				value={formData.cancellationNoticeFraction}
 				onChange={handleInputChange}
-				placeholder="one-third (1/3)"
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> of the time between the Proposed Time and the Time of Text. Penalties for Cancellations shall be imposed in
 				accordance with Article IV of this Agreement.
 			</p>
@@ -433,7 +432,7 @@ const FriendshipAgreement = () => {
 				name="bitchBillPercentage"
 				value={formData.bitchBillPercentage}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/>% of the amount they would otherwise owe pursuant to Section 3.01 (the "<u>Bitch Bill</u>"). The Bitch Bill
 				shall subsidize the amounts owed by all Frens attending the Homecoming.
 			</p>
@@ -480,14 +479,14 @@ const FriendshipAgreement = () => {
 				name="negotiationPeriod"
 				value={formData.negotiationPeriod}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days; if negotiations fail, the parties shall engage in mediation with a mutually agreed-upon mediator for a
 				period not to exceed <input
 				type="number"
 				name="mediationPeriod"
 				value={formData.mediationPeriod}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days. If mediation is unsuccessful, the dispute shall be submitted to binding arbitration before <input
 				type="text"
 				name="arbitrator"
@@ -501,7 +500,7 @@ const FriendshipAgreement = () => {
 				name="appealPeriod"
 				value={formData.appealPeriod}
 				onChange={handleInputChange}
-				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days of its issuance by submitting a written notice of appeal to all other Parties' and <input
 				type="text"
 				name="arbitrator"
@@ -509,13 +508,7 @@ const FriendshipAgreement = () => {
 				onChange={handleInputChange}
 				placeholder="name of one of the Parties' parents"
 				className="w-64 border-b border-gray-300 focus:border-blue-500 outline-none"
-			/>. The appeal shall be heard by <input
-				type="text"
-				name="appealArbiter"
-				value={formData.appealArbiter}
-				onChange={handleInputChange}
-				className="w-40 border-b border-gray-300 focus:border-blue-500 outline-none"
-			/> as chosen by <input
+			/>. The appeal shall be heard by a person chosen by <input
 				type="text"
 				name="arbitrator"
 				value={formData.arbitrator}
