@@ -126,9 +126,11 @@ const FriendshipAgreement = () => {
 							<button onClick={() => removeFriend(index)} className="text-red-500">Remove</button>
 						)}
 					</div>
-			<p className="mb-4 avoid-break">
-				(each, a "<u>Party</u>" and collectively, the "<u>Parties</u>").
-			</p>
+			<>
+				<p className="mb-4 avoid-break">
+					(each, a "<u>Party</u>" and collectively, the "<u>Parties</u>").
+				</p>
+			</>
 				))}
 				<button onClick={addFriend} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">Add Friend</button>
 			</div>
