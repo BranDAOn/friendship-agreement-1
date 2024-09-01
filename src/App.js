@@ -96,10 +96,12 @@ const FriendshipAgreement = () => {
 			const pdf = new jsPDF('p', 'mm', 'a4');
 			const pdfWidth = pdf.internal.pageSize.getWidth();
 			const pdfHeight = pdf.internal.pageSize.getHeight();
-
+		});
+		
 		pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);	
 		pdf.save('friendship_agreement.pdf');
-	}
+		
+	};
 
 	return (<div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
 		<div ref={contentRef} className="pdf-content">
