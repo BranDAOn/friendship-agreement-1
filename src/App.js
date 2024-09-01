@@ -437,7 +437,7 @@ const FriendshipAgreement = () => {
 				name="bitchBillPercentage"
 				value={formData.bitchBillPercentage}
 				onChange={handleInputChange}
-				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/>% of the amount they would otherwise owe pursuant to Section 3.01 (the "<u>Bitch Bill</u>"). The Bitch Bill
 				shall subsidize the amounts owed by all Frens attending the Homecoming.
 			</p>
