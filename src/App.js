@@ -76,11 +76,6 @@ const FriendshipAgreement = () => {
 	const generatePDF = () => {
 		const content = contentRef.current;
 		const pdfContent = content.cloneNode(true);
-
-		const partiesSection = pdfContent.querySelector('div.mb-4.avoid-break');
-   		if (partiesSection && partiesSection.querySelector('h3')?.textContent === 'Parties:') {
-        		partiesSection.remove();
-		}
 		
 		pdfContent.querySelectorAll('input, select').forEach(input => {
 			const span = document.createElement('span');
@@ -114,12 +109,10 @@ const FriendshipAgreement = () => {
 				value={formData.date}
 				onChange={handleInputChange}
 				className="border-b border-gray-300 focus:border-blue-500 outline-none"
-			/> is made by and among {friends.filter(f => f).join(', ')} (each, a "<u>Party</u>" and collectively, the
-				"<u>Parties</u>").
+			/> is made by and among: 
 			</p>
 
 			<div className="mb-4 avoid-break">
-				<h3 className="text-xl font-bold mb-2">Parties:</h3>
 				{friends.map((friend, index) => (
 					<div key={index} className="flex items-center mb-2">
 						<input
@@ -133,6 +126,9 @@ const FriendshipAgreement = () => {
 							<button onClick={() => removeFriend(index)} className="text-red-500">Remove</button>
 						)}
 					</div>
+			<p className="mb-4 avoid-break">
+				(each, a "<u>Party</u>" and collectively, the "<u>Parties</u>").
+			</p>
 				))}
 				<button onClick={addFriend} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">Add Friend</button>
 			</div>
