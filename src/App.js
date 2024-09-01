@@ -74,7 +74,7 @@ const FriendshipAgreement = () => {
 		}
 	};
 
-	const generatePDF = () => {
+	const generatePDF = async () => {
 		const content = contentRef.current;
 		const pdfContent = content.cloneNode(true);
 		const pdf = new jsPDF('p', 'mm', 'a4');
