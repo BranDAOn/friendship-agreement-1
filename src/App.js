@@ -1,6 +1,5 @@
 import React, {useState, useRef} from 'react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import html2pdf from 'html2pdf.js';
 
 const FriendshipAgreement = () => {
 	const [formData, setFormData] = useState({
@@ -74,10 +73,11 @@ const FriendshipAgreement = () => {
 		}
 	};
 
-	const generatePDF = async () => {
+	const generatePDF = () => {
 		const content = contentRef.current;
+
 		const pdfContent = content.cloneNode(true);
-		
+
 		pdfContent.querySelectorAll('input, select').forEach(input => {
 			const span = document.createElement('span');
 			span.textContent = input.value;
@@ -88,19 +88,15 @@ const FriendshipAgreement = () => {
 			button.remove();
 		});
 
-		const canvas = await html2canvas(pdfContent, { scale: 2 });
-		const imgData = canvas.toDataURL('image/png');
-		
-		html2canvas(pdfContent, { scale: 2 }).then(canvas => {
-			const imgData = canvas.toDataURL('image/png');
-			const pdf = new jsPDF('p', 'mm', 'a4');
-			const pdfWidth = pdf.internal.pageSize.getWidth();
-			const pdfHeight = pdf.internal.pageSize.getHeight();
-		});
-		
-		pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);	
-		pdf.save('friendship_agreement.pdf');
-		
+		const opt = {
+			margin: 15,
+			filename: 'friendship_agreement.pdf',
+			image: { type: 'jpeg', quality: 0.98 },
+			html2canvas: { scale: 2 },
+			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+		};
+
+		html2pdf().from(pdfContent).set(opt).save();
 	};
 
 	return (<div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
