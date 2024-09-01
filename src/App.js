@@ -77,6 +77,11 @@ const FriendshipAgreement = () => {
 	const generatePDF = () => {
 		const content = contentRef.current;
 		const pdfContent = content.cloneNode(true);
+		const pdf = new jsPDF('p', 'mm', 'a4');
+		const pdfWidth = pdf.internal.pageSize.getWidth();
+		const pdfHeight = pdf.internal.pageSize.getHeight();
+		const canvas = await html2canvas(pdfContent, { scale: 2 });
+		const imgData = canvas.toDataURL('image/png');
 		
 		pdfContent.querySelectorAll('input, select').forEach(input => {
 			const span = document.createElement('span');
@@ -87,12 +92,6 @@ const FriendshipAgreement = () => {
 		pdfContent.querySelectorAll('button').forEach(button => {
 			button.remove();
 		});
-
-		const pdf = new jsPDF('p', 'mm', 'a4');
-		const pdfWidth = pdf.internal.pageSize.getWidth();
-		const pdfHeight = pdf.internal.pageSize.getHeight();
-		const canvas = await html2canvas(pdfContent, { scale: 2 });
-		const imgData = canvas.toDataURL('image/png');
 		
 		pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
 		pdf.save('friendship_agreement.pdf');
