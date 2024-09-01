@@ -75,9 +75,13 @@ const FriendshipAgreement = () => {
 
 	const generatePDF = () => {
 		const content = contentRef.current;
-
 		const pdfContent = content.cloneNode(true);
 
+		const partiesSection = pdfContent.querySelector('div.mb-4.avoid-break');
+   		if (partiesSection && partiesSection.querySelector('h3')?.textContent === 'Parties:') {
+        		partiesSection.remove();
+		}
+		
 		pdfContent.querySelectorAll('input, select').forEach(input => {
 			const span = document.createElement('span');
 			span.textContent = input.value;
