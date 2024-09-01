@@ -16,7 +16,7 @@ const FriendshipAgreement = () => {
 		schedulingMinHours: '3',
 		amountoftime: 'hours',
 		schedulingMaxDays: '10',
-		spontaneousActivityNoticeHours: '1',
+		spontaneousActivityNoticeHours: '2',
 		cancellationNoticeFraction: '1/3',
 		creditCardRouletteFrequency: 'Once',
 		creditCardRouletteMonth: 'March',
@@ -205,7 +205,7 @@ const FriendshipAgreement = () => {
 				name="fuckUpActivityDays"
 				value={formData.fuckUpActivityDays}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days of the end of the month for which the Quota was not met. (a "<u>Fuck-Up Activities</u>"). Fuck-Up
 				Activities shall be subject to the same terms and conditions under this Agreement as if they were an Activity.
 				Fuck-Up Activities shall not count towards any Quotas.
@@ -214,20 +214,18 @@ const FriendshipAgreement = () => {
 			<p className="mb-4 avoid-break">
 				<strong>Section 1.06. <u>Rescheduling Activities</u>.</strong> In the event an Activity needs to be
 				rescheduled, the Parties shall follow the same process outlined in Section 2.01 for scheduling. The Party
-				requesting the reschedule shall propose at least three (3) alternative dates and times within the next 
-				<input
+				requesting the reschedule shall propose at least three (3) alternative dates and times within the next <input
 				type="number"
 				name="rescheduleAlternativeDays"
 				value={formData.rescheduleAlternativeDays}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
-			/> days. The Parties shall then use good faith efforts to agree on a new date and time for the Activity within 
-				<input
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
+			/> days. The Parties shall then use good faith efforts to agree on a new date and time for the Activity within <input
 				type="number"
 				name="rescheduleAgreementHours"
 				value={formData.rescheduleAgreementHours}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> hours of the rescheduling request. If no agreement is reached, the Activity shall be considered cancelled
 				and subject to the provisions of Section 1.05.
 			</p>
@@ -239,7 +237,7 @@ const FriendshipAgreement = () => {
 				name="withdrawalNoticeDays"
 				value={formData.withdrawalNoticeDays}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days prior to the intended withdrawal date. The withdrawing Party shall be responsible for participating in
 				all scheduled Activities up to the withdrawal date and shall settle any outstanding financial obligations
 				related to past Activities. Upon withdrawal, the Party shall cease to be bound by the terms of this Agreement
@@ -254,13 +252,13 @@ const FriendshipAgreement = () => {
 				name="probationaryPeriodMonths"
 				value={formData.probationaryPeriodMonths}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> month probationary period. During this period, the new member shall attend at least <input
 				type="number"
 				name="probationaryActivitiesPerMonth"
 				value={formData.probationaryActivitiesPerMonth}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> Activities per month. At the end of the probationary period, existing Parties shall vote on the new member's
 				full integration. A unanimous vote is required for the new member to be fully admitted to the group. Upon full
 				admission, the new member shall become a Party to this Agreement by signing an addendum.
@@ -277,25 +275,25 @@ const FriendshipAgreement = () => {
 				name="schedulingMinHours"
 				value={formData.schedulingMinHours}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> <input
 				type="text"
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of an Activity and no more than <input
 				type="number"
 				name="schedulingMaxDays"
 				value={formData.schedulingMaxDays}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> <input
 				type="text"
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of an Activity. No Party will propose an Activity that they know or
 				reasonably should know another Party cannot attend (including, without limitation, by reason of forgetting
 				that a Party told another Party about a preplanned activity and the forgetting party never saved it in your
@@ -313,13 +311,13 @@ const FriendshipAgreement = () => {
 				name="spontaneousActivityNoticeHours"
 				value={formData.spontaneousActivityNoticeHours}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> <input
 				type="text"
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of the Activity. Participation in spontaneous Activities is voluntary and
 				shall not count towards the monthly Quota unless unanimously agreed by the Parties but may count towards the
 				good faith effort for additional Activities as described in Section 1.02.
@@ -334,7 +332,7 @@ const FriendshipAgreement = () => {
 				name="cancellationNoticeFraction"
 				value={formData.cancellationNoticeFraction}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> of the time between the Proposed Time and the Time of Text. Penalties for Cancellations shall be imposed in
 				accordance with Article IV of this Agreement.
 			</p>
@@ -432,7 +430,7 @@ const FriendshipAgreement = () => {
 				name="bitchBillPercentage"
 				value={formData.bitchBillPercentage}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/>% of the amount they would otherwise owe pursuant to Section 3.01 (the "<u>Bitch Bill</u>"). The Bitch Bill
 				shall subsidize the amounts owed by all Frens attending the Homecoming.
 			</p>
@@ -479,14 +477,14 @@ const FriendshipAgreement = () => {
 				name="negotiationPeriod"
 				value={formData.negotiationPeriod}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days; if negotiations fail, the parties shall engage in mediation with a mutually agreed-upon mediator for a
 				period not to exceed <input
 				type="number"
 				name="mediationPeriod"
 				value={formData.mediationPeriod}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days. If mediation is unsuccessful, the dispute shall be submitted to binding arbitration before <input
 				type="text"
 				name="arbitrator"
@@ -500,7 +498,7 @@ const FriendshipAgreement = () => {
 				name="appealPeriod"
 				value={formData.appealPeriod}
 				onChange={handleInputChange}
-				className="w-12 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> days of its issuance by submitting a written notice of appeal to all other Parties' and <input
 				type="text"
 				name="arbitrator"
