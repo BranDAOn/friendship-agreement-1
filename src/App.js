@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react';
-import html2pdf from 'html2pdf.js';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const FriendshipAgreement = () => {
 	const [formData, setFormData] = useState({
@@ -87,12 +88,15 @@ const FriendshipAgreement = () => {
 			button.remove();
 		});
 
-		const opt = {
-			margin: 15,
-			filename: 'friendship_agreement.pdf',
-			image: { type: 'jpeg', quality: 0.98 },
-			html2canvas: { scale: 2 },
-			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+		const pdf = new jsPDF('p', 'mm', 'a4');
+		const pdfWidth = pdf.internal.pageSize.getWidth();
+		const pdfHeight = pdf.internal.pageSize.getHeight();
+		const canvas = await html2canvas(pdfContent, { scale: 2 });
+		const imgData = canvas.toDataURL('image/png');
+		
+		pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+		pdf.save('friendship_agreement.pdf');
+		
 		};
 
 		html2pdf().from(pdfContent).set(opt).save();
@@ -109,7 +113,7 @@ const FriendshipAgreement = () => {
 				value={formData.date}
 				onChange={handleInputChange}
 				className="border-b border-gray-300 focus:border-blue-500 outline-none"
-			/> is made by and among: 
+			/> is made by and among the individuals listed immediately below (each, a "<u>Party</u>" and collectively, the "<u>Parties</u>"): 
 			</p>
 
 			<div className="mb-4 avoid-break">
@@ -125,10 +129,7 @@ const FriendshipAgreement = () => {
 						{friends.length > 1 && (
 							<button onClick={() => removeFriend(index)} className="text-red-500">Remove</button>
 						)}
-					</div>
-		
-			<p>(each, a "<u>Party</u>" and collectively, the "<u>Parties</u>").</p>
-			
+					</div>			
 				))}
 				<button onClick={addFriend} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">Add Friend</button>
 			</div>
