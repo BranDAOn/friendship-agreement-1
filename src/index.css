@@ -14,3 +14,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.avoid-break {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}

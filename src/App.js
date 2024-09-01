@@ -92,7 +92,7 @@ const FriendshipAgreement = () => {
 		});
 
 		const opt = {
-			margin: 15,
+			margin: 20,
 			filename: 'friendship_agreement.pdf',
 			image: { type: 'jpeg', quality: 0.98 },
 			html2canvas: { scale: 2 },
@@ -106,7 +106,7 @@ const FriendshipAgreement = () => {
 		<div ref={contentRef} className="pdf-content">
 			<h1 className="text-3xl font-bold mb-6 text-center">FRIENDSHIP AGREEMENT</h1>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				This FRIENDSHIP AGREEMENT (this "<u>Agreement</u>") dated as of <input
 				type="date"
 				name="date"
@@ -117,7 +117,7 @@ const FriendshipAgreement = () => {
 				"<u>Parties</u>").
 			</p>
 
-			<div className="mb-4">
+			<div className="mb-4 avoid-break">
 				<h3 className="text-xl font-bold mb-2">Parties:</h3>
 				{friends.map((friend, index) => (
 					<div key={index} className="flex items-center mb-2">
@@ -136,7 +136,7 @@ const FriendshipAgreement = () => {
 				<button onClick={addFriend} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">Add Friend</button>
 			</div>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4">RECITALS</h2>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">RECITALS</h2>
 
 			<p>WHEREAS, the Parties wish to partake in various social activities, including but not limited to dining out,
 				to foster and maintain their friendship;</p>
@@ -150,10 +150,10 @@ const FriendshipAgreement = () => {
 			<p>NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, the Parties agree
 				as follows:</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4">ARTICLE I</h2>
-			<h3 className="text-xl font-bold mb-4"><u>ACTIVITIES AND COMMITMENTS</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE I</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break"><u>ACTIVITIES AND COMMITMENTS</u></h3>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.01. <u>Activities</u>.</strong> The Parties shall engage in social activities for the
 				purpose of enjoying each other's camaraderie at a location to be agreed upon pursuant to Section 1.03 and time
 				to be agreed upon pursuant to Section 2.01 (an "<u>Activity</u>" or "<u>Activities</u>") at least <input
@@ -174,12 +174,12 @@ const FriendshipAgreement = () => {
 			</p>
 
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.02. <u>Good Faith Effort for More Activities</u>.</strong> Each Party agrees to use good
 				faith efforts to assist in the coordination of, and attend, at least one additional Activity per month.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.03. <u>Location of Activities</u>.</strong> Each Activity shall take place in <input
 				type="text"
 				name="location"
@@ -197,13 +197,13 @@ const FriendshipAgreement = () => {
 			/>] (each, a "<u>Location</u>"), subject to the terms and condition of Section 2.01 herein.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.04. <u>Guests</u>.</strong> Guests are not permitted to attend Activities or Fuck-Up
 				Activities unless unanimously agreed by the Parties. Timing and notice for proposals to invite a guest must
 				occur in accordance with Section 2.01.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.05. <u>Fuck-Up Activities</u>.</strong> In the event the Quota is not met in a particular
 				month, the Parties will get their shit together and meet for an Activity as soon as reasonably
 				practicable; <i>provided</i>, <i>however</i>, that Fuck-Up Activities must occur within [<input
@@ -217,7 +217,7 @@ const FriendshipAgreement = () => {
 				Fuck-Up Activities shall not count towards any Quotas.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.06. <u>Rescheduling Activities</u>.</strong> In the event an Activity needs to be
 				rescheduled, the Parties shall follow the same process outlined in Section 2.01 for scheduling. The Party
 				requesting the reschedule shall propose at least [three (3)] alternative dates and times within the next
@@ -238,7 +238,7 @@ const FriendshipAgreement = () => {
 				and subject to the provisions of Section 1.05.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.07. <u>Voluntary Withdrawal</u>.</strong> Any Party may voluntarily withdraw from this
 				Agreement by providing written notice to all other Parties at least <input
 				type="number"
@@ -253,7 +253,7 @@ const FriendshipAgreement = () => {
 				withdrawing Party shall perpetually be known as a pussy.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 1.08. <u>New Member Integration</u>.</strong> The addition of new members to the group
 				requires unanimous approval from all existing Parties. Upon approval, new members shall undergo a [<input
 				type="number"
@@ -272,10 +272,10 @@ const FriendshipAgreement = () => {
 				admission, the new member shall become a Party to this Agreement by signing an addendum.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4">ARTICLE II</h2>
-			<h3 className="text-xl font-bold mb-4"><u>TIMING AND NOTICE</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE II</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break"><u>TIMING AND NOTICE</u></h3>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 2.01. <u>Scheduling</u>.</strong> Activities, including time and Location, shall be proposed
 				by a Party to each other Party by delivery of a group-text message, the recipients of which shall be
 				exclusively the Parties (each, a "<u>Text</u>"), at a time at least [<input
@@ -298,7 +298,7 @@ const FriendshipAgreement = () => {
 				of Text</u>."
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 2.02. <u>Spontaneous Activities</u>.</strong> In addition to regularly scheduled Activities,
 				any Party may propose a spontaneous or unplanned Activity by sending a Text to all other Parties at any time.
 				Such spontaneous Activities shall be subject to the same terms and conditions as regular Activities, except
@@ -313,7 +313,7 @@ const FriendshipAgreement = () => {
 				good faith effort for additional Activities as described in Section 1.02.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 2.03. <u>Cancellations and Notice of Cancellations</u>.</strong> A party may cancel an
 				Activity and/or withdraw from attending an Activity by Text indicating that Party's intent to cancel and/or
 				withdraw (a "<u>Cancellation</u>"). Notice of any Cancellation must be delivered within a period not to be
@@ -327,10 +327,10 @@ const FriendshipAgreement = () => {
 				accordance with Article IV of this Agreement.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4">ARTICLE III</h2>
-			<h3 className="text-xl font-bold mb-4"><u>FINANCIAL MATTERS</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE III</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break"><u>FINANCIAL MATTERS</u></h3>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 3.01. <u>Payment for Activities</u>.</strong> Except as provided for in Article IV, each Party
 				and any guest of that Party (each, a "<u>Fren</u>") will pay for their share of any cost, bill or fee
 				associated with an Activity in accordance with this Article III. In the event that the Frens have an Activity
@@ -340,7 +340,7 @@ const FriendshipAgreement = () => {
 				debit, and credit cards, (ii) in accordance with Section 3.02 or (iii) in accordance with Section 3.03.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 3.02. <u>Credit Card Points</u>.</strong> For each Activity, any Party desiring to pay for an
 				entire Activity with their credit card to accumulate credit card points and seek reimbursement from other
 				Frens for their pro rata portion of any amounts paid shall play Rock-Paper-Scissors (<i>with "says Shoot"</i>)
@@ -352,7 +352,7 @@ const FriendshipAgreement = () => {
 				guests shall not be allowed to participate in Rock-Paper-Scissors.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 3.03. <u>Credit Card Roulette</u>.</strong> [<input
 				type="text"
 				name="creditCardRouletteFrequency"
@@ -385,23 +385,23 @@ const FriendshipAgreement = () => {
 				loses and will be required to pay for the entire Activity bill.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4">ARTICLE IV</h2>
-			<h3 className="text-xl font-bold mb-4"><u>PENALTIES</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE IV</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break"><u>PENALTIES</u></h3>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 4.01. <u>Being a Lil' Bitch</u>.</strong> In the event a Party fails to attend two consecutive
 				Activities without a Valid Excuse (as described in this Section 4.01), they shall be labelled a "<u>Lil'
 				Bitch</u>" until such time that the Lil' Bitch attends a future Activity. A "Valid Excuse" is an excuse that
 				permits an absence from an Activity without exposure to any associated penalties under this Article IV are
 				limited to the following:
 			</p>
-			<ul className="list-disc pl-8 mb-4">
+			<ul className="list-disc pl-8 mb-4 avoid-break">
 				{validExcuses.map((excuse, index) => (<li key={index} className="mb-2">
 					{excuse}
 					<button onClick={() => handleRemoveExcuse(index)} className="ml-2 text-red-500">Remove</button>
 				</li>))}
 			</ul>
-			<div className="mb-4">
+			<div className="mb-4 avoid-break">
 				<input
 					type="text"
 					value={newExcuse}
@@ -411,7 +411,7 @@ const FriendshipAgreement = () => {
 				/>
 				<button onClick={handleAddExcuse} className="bg-blue-500 text-white px-4 py-2 rounded">Add Excuse</button>
 			</div>
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				Any immediate or extended family member's birthday or event to which a Party already submitted an RSVP, which
 				must have been submitted at least [<input
 				type="number"
@@ -422,7 +422,7 @@ const FriendshipAgreement = () => {
 			/>] hours prior to the relevant birthday or event.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 4.02. <u>Lil Bitch Penalties</u>.</strong> Upon attendance by a Lil' Bitch to an Activity (the
 				"<u>Homecoming</u>"), the Lil' Bitch will be required to pay <input
 				type="number"
@@ -434,7 +434,7 @@ const FriendshipAgreement = () => {
 				shall subsidize the amounts owed by all Frens attending the Homecoming.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 4.03. <u>Anti-Douchebaggery</u>.</strong> Notwithstanding any other provision of this Article
 				IV, the parties will not be a Douchebag at the Homecoming of a Lil' Bitch. Being a "Douchebag" includes, but
 				is not limited to, ordering an exorbitant amount of items off of the Restaurant menu in an attempt to force
@@ -443,7 +443,7 @@ const FriendshipAgreement = () => {
 				attendance to Activities.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 4.04. <u>Fuck-Up Activity Penalties</u>.</strong> In the event a Fuck-Up Activity occurs, each
 				of the Parties (and any guests) will each take one shot of palatable and consumable alcohol, excluding [<input
 				type="text"
@@ -458,17 +458,17 @@ const FriendshipAgreement = () => {
 			/>].
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4">ARTICLE V</h2>
-			<h3 className="text-xl font-bold mb-4"><u>MISCELLANEOUS</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE V</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break"><u>MISCELLANEOUS</u></h3>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 5.01. <u>Assignments</u>.</strong> The Parties shall not assign or transfer his or her rights
 				or duties without the express written consent of each other Party. Any transfer or assignment made without the
 				consent of each other Party shall not relieve the transferor or assignor of his or her duties or obligations
 				under this agreement.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 5.02 <u>Dispute Resolution</u>.</strong> Any dispute arising out of or relating to this
 				Agreement shall be resolved through the following process: The parties shall first attempt to resolve the
 				dispute through good-faith negotiations for a period of [<input
@@ -509,12 +509,12 @@ const FriendshipAgreement = () => {
 				all Parties.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 5.03. <u>Termination</u>.</strong> This Agreement may be terminated and all obligations,
 				rights and duties herein shall cease to have legal effect upon the unanimous written consent of the Parties.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 5.04. <u>Governing Law</u>.</strong> This Agreement shall be governed by, and construed in
 				accordance with, the laws of the State of [<select
 				name="governingState"
@@ -576,7 +576,7 @@ const FriendshipAgreement = () => {
 				thereof.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 5.05 <u>Severability</u>.</strong> If any provision of this Agreement or the application of
 				any such provision to any person or circumstance shall be held invalid, illegal or unenforceable in any
 				respect by a court of competent jurisdiction, such invalidity, illegality or unenforceability shall not affect
@@ -584,16 +584,16 @@ const FriendshipAgreement = () => {
 				provision in a particular jurisdiction shall not invalidate such provision in any other jurisdiction.
 			</p>
 
-			<p className="mb-4">
+			<p className="mb-4 avoid-break">
 				<strong>Section 5.06 <u>Amendments</u>.</strong> Any proposed amendment to this Agreement must be approved by
 				unanimous consent of all Parties. Each Party shall have one (1) vote in the amendment process.
 			</p>
 
 			<div className="mt-8">
-				<p className="font-bold">In witness whereof, the parties have executed this agreement on the day and year first
+				<p className="font-bold avoid-break">In witness whereof, the parties have executed this agreement on the day and year first
 					written above.</p>
 				{friends.filter(f => f).map((friend, index) => (
-					<div key={index} className="mt-4 pb-4 border-b border-gray-300">
+					<div key={index} className="mt-4 pb-4 border-b border-gray-300  avoid-break">
 						<p>Print Name: {friend}</p>
 						<p className="mt-4">Signature: ____________________</p>
 					</div>
