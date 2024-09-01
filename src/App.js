@@ -99,8 +99,8 @@ const FriendshipAgreement = () => {
 
 		pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);	
 		pdf.save('friendship_agreement.pdf');
-		
 		};
+	};
 
 	return (<div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
 		<div ref={contentRef} className="pdf-content">
