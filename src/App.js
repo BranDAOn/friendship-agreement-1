@@ -22,7 +22,7 @@ const FriendshipAgreement = () => {
 		creditCardRouletteMonth: 'March',
 		rsvpHours: '24',
 		bitchBillPercentage: '200',
-		excludedAlcohol: 'gin', 'beer', 'wine',
+		excludedAlcohol: ['gin', 'beer', 'wine'],
 		negotiationPeriod: '7',
 		mediationPeriod: '30',
 		appealPeriod: '7',
