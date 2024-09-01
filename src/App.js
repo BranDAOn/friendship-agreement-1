@@ -111,7 +111,7 @@ const FriendshipAgreement = () => {
 					out with you at some defined interval. Hopefully you don't actually need to use this to see your friends;
 					however, if you do, you're welcome. Use this agreement at your own risk. I'm not your lawyer, I'm just some guy. 
 					I neither represent, warrant, nor promise anything to you by letting you use this agreement. 
-					I don't even know if its enforceable, although I think it should be (not legal advice). It's also hilarious.
+					I don't even know if it's enforceable, although I think it should be (not legal advice). It's also hilarious.
 					Feel free to contribute to the code here: https://github.com/BranDAOn/friendship-agreement-1. Also, if you're
 					feeling generous, feel free to <b>tip via Venmo at @Brandon-Ferrick or at brandonf.eth</b> (if you're into crypto).
 					Feel free to ping me with any questions at brandon@bhfc.xyz. Enjoy, and don't do anything stupid.]</i></p>
