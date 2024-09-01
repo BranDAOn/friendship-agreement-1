@@ -281,7 +281,7 @@ const FriendshipAgreement = () => {
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of an Activity and no more than <input
 				type="number"
 				name="schedulingMaxDays"
@@ -293,7 +293,7 @@ const FriendshipAgreement = () => {
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of an Activity. No Party will propose an Activity that they know or
 				reasonably should know another Party cannot attend (including, without limitation, by reason of forgetting
 				that a Party told another Party about a preplanned activity and the forgetting party never saved it in your
@@ -317,7 +317,7 @@ const FriendshipAgreement = () => {
 				name="amountoftime"
 				value={formData.amountoftime}
 				onChange={handleInputChange}
-				className="w-8 border-b border-gray-300 focus:border-blue-500 outline-none"
+				className="w-16 border-b border-gray-300 focus:border-blue-500 outline-none"
 			/> prior to the proposed time of the Activity. Participation in spontaneous Activities is voluntary and
 				shall not count towards the monthly Quota unless unanimously agreed by the Parties but may count towards the
 				good faith effort for additional Activities as described in Section 1.02.
