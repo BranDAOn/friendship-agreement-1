@@ -25,6 +25,12 @@ const FriendshipAgreement = () => {
 		rsvpHours: '24',
 		bitchBillPercentage: '200',
 		excludedAlcohol: ['gin', 'beer', 'wine'],
+		negotiationPeriod: '30',
+		mediationPeriod: '60',
+		arbitrator: '',
+		appealPeriod: '30',
+		appealArbiter: 'a local bartender',
+		governingState: 'New York',
 	});
 
 	const contentRef = useRef(null);
