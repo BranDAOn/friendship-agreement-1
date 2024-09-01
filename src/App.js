@@ -72,15 +72,28 @@ const FriendshipAgreement = () => {
 
 	const generatePDF = () => {
 		const content = contentRef.current;
+
+		const pdfContent = content.cloneNode(true);
+
+		pdfContent.querySelectorAll('input, select').forEach(input => {
+			const span = document.createElement('span');
+			span.textContent = input.value;
+			input.parentNode.replaceChild(span, input);
+		});
+
+		pdfContent.querySelectorAll('button').forEach(button => {
+			button.remove();
+		});
+
 		const opt = {
 			margin: 15,
 			filename: 'friendship_agreement.pdf',
-			image: {type: 'jpeg', quality: 0.98},
-			html2canvas: {scale: 2},
-			jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'}
+			image: { type: 'jpeg', quality: 0.98 },
+			html2canvas: { scale: 2 },
+			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
 		};
 
-		html2pdf().from(content).set(opt).save();
+		html2pdf().from(pdfContent).set(opt).save();
 	};
 
 	return (<div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
@@ -574,22 +587,22 @@ const FriendshipAgreement = () => {
 				<p className="font-bold">In witness whereof, the parties have executed this agreement on the day and year first
 					written above.</p>
 				{friends.filter(f => f).map((friend, index) => (
-					<div key={index} className="mt-4">
+					<div key={index} className="mt-4 pb-4 border-b border-gray-300">
 						<p>Print Name: {friend}</p>
 						<p className="mt-4">Signature: ____________________</p>
 					</div>
 				))}
+			</div>
 		</div>
-	</div>
 
-	<button
-		onClick={generatePDF}
-		className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-	>
-		Generate PDF
-	</button>
-</div>)
-	;
+		<button
+			onClick={generatePDF}
+			className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+		>
+			Generate PDF
+		</button>
+	</div>)
+		;
 };
 
 export default FriendshipAgreement;
