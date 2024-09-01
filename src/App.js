@@ -110,7 +110,7 @@ const FriendshipAgreement = () => {
 				I don't even know if its enforceable, although I think it should be (not legal advice). It's also hilarious.
 				Feel free to contribute to the code here: https://github.com/BranDAOn/friendship-agreement-1. Also, if you're
 				feeling generous, feel free to tip via Venmo at @Brandon-Ferrick or at brandonf.eth (if you're into crypto).
-				Feel free to ping me with any questions at brandon@bhfc.xyz. Enjoy, and don't do anything stupid.]</i>.</p>
+				Feel free to ping me with any questions at brandon@bhfc.xyz. Enjoy, and don't do anything stupid.]</i></p>
 		
 			<p className="mb-4 avoid-break">
 				This FRIENDSHIP AGREEMENT (this "<u>Agreement</u>") dated as of <input
