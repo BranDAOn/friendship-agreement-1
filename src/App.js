@@ -348,8 +348,8 @@ const FriendshipAgreement = () => {
 				accordance with Article IV of this Agreement.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE III</h2>
-			<h3 className="text-xl font-bold mb-4 avoid-break"><u>FINANCIAL MATTERS</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break text-center">ARTICLE III</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break text-center"><u>FINANCIAL MATTERS</u></h3>
 
 			<p className="mb-4 avoid-break">
 				<strong>Section 3.01. <u>Payment for Activities</u>.</strong> Except as provided for in Article IV, each Party
@@ -407,8 +407,8 @@ const FriendshipAgreement = () => {
 				loses and will be required to pay for the entire Activity bill.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE IV</h2>
-			<h3 className="text-xl font-bold mb-4 avoid-break"><u>PENALTIES</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break text-center">ARTICLE IV</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break text-center"><u>PENALTIES</u></h3>
 
 			<p className="mb-4 avoid-break">
 				<strong>Section 4.01. <u>Being a Lil' Bitch</u>.</strong> In the event a Party fails to attend two consecutive
@@ -470,8 +470,8 @@ const FriendshipAgreement = () => {
 			/>.
 			</p>
 
-			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break">ARTICLE V</h2>
-			<h3 className="text-xl font-bold mb-4 avoid-break"><u>MISCELLANEOUS</u></h3>
+			<h2 className="text-2xl font-bold mt-6 mb-4 avoid-break text-center">ARTICLE V</h2>
+			<h3 className="text-xl font-bold mb-4 avoid-break text-center"><u>MISCELLANEOUS</u></h3>
 
 			<p className="mb-4 avoid-break">
 				<strong>Section 5.01. <u>Assignments</u>.</strong> The Parties shall not assign or transfer his or her rights
@@ -609,7 +609,7 @@ const FriendshipAgreement = () => {
 			</p>
 
 			<div className="mt-8">
-				<p className="font-bold avoid-break">In witness whereof, the parties have executed this agreement on the day and year first
+				<p className="font-bold avoid-break">In witness whereof, the parties have executed this agreement on the date first
 					written above.</p>
 				{friends.filter(f => f).map((friend, index) => (
 					<div key={index} className="mt-4 pb-4 border-b border-gray-300">
