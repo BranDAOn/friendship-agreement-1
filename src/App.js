@@ -95,9 +95,9 @@ const FriendshipAgreement = () => {
 		const opt = {
 			margin: 15,
 			filename: 'friendship_agreement.pdf',
-			image: { type: 'jpeg', quality: 0.98 },
-			html2canvas: { scale: 2 },
-			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+			image: { type: 'jpeg', quality: 0.75 },
+			html2canvas: { scale: 1.5 },
+			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true }
 		};
 
 		html2pdf().from(pdfContent).set(opt).save();
