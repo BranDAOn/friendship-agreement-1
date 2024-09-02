@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import jspdf from 'jspdf';
+import { jspdf } from 'jspdf';
 
 const FriendshipAgreement = () => {
 	const [formData, setFormData] = useState({
