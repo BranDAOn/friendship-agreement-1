@@ -27,6 +27,7 @@ const FriendshipAgreement = () => {
 		mediationPeriod: '30',
 		appealPeriod: '7',
 		appealArbiter: 'tbh whoever you want',
+		governingState: 'New York'
 		
 	});
 
