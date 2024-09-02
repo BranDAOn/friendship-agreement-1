@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import html2pdf from 'html2pdf.js';
+import jspdf from 'jspdf';
 
 const FriendshipAgreement = () => {
 	const [formData, setFormData] = useState({
@@ -74,35 +74,65 @@ const FriendshipAgreement = () => {
 		}
 	};
 
-	const generatePDF = () => {
-		const content = contentRef.current;
-		const pdfContent = content.cloneNode(true);
+    const generatePDF = () => {
+        const content = contentRef.current;
+        const pdfContent = content.cloneNode(true);
 
-		pdfContent.querySelectorAll('input, select').forEach(input => {
-			const span = document.createElement('span');
-			span.textContent = input.value;
-			input.parentNode.replaceChild(span, input);
-		});
+        // Preprocess the content
+        pdfContent.querySelectorAll('input, select').forEach(input => {
+            const span = document.createElement('span');
+            span.textContent = input.value;
+            input.parentNode.replaceChild(span, input);
+        });
+        pdfContent.querySelectorAll('button, .pdf-exclude').forEach(el => {
+            el.remove();
+        });
 
-		pdfContent.querySelectorAll('button').forEach(button => {
-			button.remove();
-		});
+        const doc = new jsPDF({
+            unit: 'pt',
+            format: 'a4',
+            orientation: 'portrait'
+        });
 
-		pdfContent.querySelectorAll('.pdf-exclude').forEach(el => {
-			el.remove();
-  		});
+        const parseElement = (element, x, y, maxWidth) => {
+            const children = element.childNodes;
+            for (let i = 0; i < children.length; i++) {
+                const child = children[i];
+                if (child.nodeType === Node.TEXT_NODE) {
+                    const text = child.textContent.trim();
+                    if (text) {
+                        const lines = doc.splitTextToSize(text, maxWidth);
+                        doc.text(lines, x, y);
+                        y += lines.length * 12; // Assuming 12pt line height
+                    }
+                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                    if (child.tagName === 'H1') {
+                        doc.setFontSize(24);
+                        doc.setFont(undefined, 'bold');
+                    } else if (child.tagName === 'H2') {
+                        doc.setFontSize(18);
+                        doc.setFont(undefined, 'bold');
+                    } else if (child.tagName === 'P') {
+                        doc.setFontSize(12);
+                        doc.setFont(undefined, 'normal');
+                    }
 
-		const opt = {
-			margin: 15,
-			filename: 'friendship_agreement.pdf',
-			image: { type: 'jpeg', quality: 0.75 },
-			html2canvas: { scale: 1.5 },
-			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true }
-		};
+                    if (!child.classList.contains('pdf-exclude')) {
+                        y = parseElement(child, x, y, maxWidth);
+                    }
+                }
+            }
+            return y;
+        };
 
-		html2pdf().from(pdfContent).set(opt).save();
-	};
+        let y = 40; // Starting y position
+        const maxWidth = doc.internal.pageSize.getWidth() - 80; // 40pt margins on each side
 
+        parseElement(pdfContent, 40, y, maxWidth);
+
+        doc.save('friendship_agreement.pdf');
+    };
+		
 	return (<div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
 		<div ref={contentRef} className="pdf-content">
 			<h1 className="text-3xl font-bold mb-6 text-center">FRIENDSHIP AGREEMENT</h1>
