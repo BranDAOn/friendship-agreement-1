@@ -450,7 +450,7 @@ const FriendshipAgreement = () => {
 				<strong>Section 4.03. <u>Anti-Douchebaggery</u>.</strong> Notwithstanding any other provision of this Article
 				IV, the parties will not be a Douchebag at the Homecoming of a Lil' Bitch. Being a "Douchebag" includes, but
 				is not limited to, ordering an exorbitant amount of items off of the Restaurant menu in an attempt to force
-				the Lil' Bitch to pay a high Bitchboy Bill; <i>provided</i>, <i>however</i>, that a Party will not be a
+				the Lil' Bitch to pay an excessive Bitchboy Bill; <i>provided</i>, <i>however</i>, that a Party will not be a
 				douchebag if they make fun of, harass, or otherwise demean or demoralize the Lil' Bitch for their lack of
 				attendance to Activities.
 			</p>
